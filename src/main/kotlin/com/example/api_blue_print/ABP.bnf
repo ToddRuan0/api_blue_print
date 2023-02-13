@@ -1,0 +1,26 @@
+{
+  parserClass="com.example.api_blue_print.parser.ABPParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="ABP"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.example.api_blue_print.psi"
+  psiImplPackage="com.example.api_blue_print.psi.impl"
+
+  elementTypeHolderClass="com.example.api_blue_print.psi.ABPTypes"
+  elementTypeClass="com.example.api_blue_print.psi.ABPElementType"
+  tokenTypeClass="com.example.api_blue_print.psi.ABPTokenType"
+
+  parserUtilClass="com.intellij.json.JsonParser"
+}
+
+root ::= (titleBlock | string)*
+
+titleBlock ::= title titleBlockBody
+title ::= LEVEL_1_T | LEVEL_2_T | LEVEL_3_T | LEVEL_4_T | LEVEL_5_T
+titleBlockBody ::= string list*
+
+external json ::= json
+
+list ::= LIST_BEGIN string json* list*
