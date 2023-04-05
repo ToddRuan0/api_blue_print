@@ -14,13 +14,15 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
+    None.<br>
     <em>most HTML tags may be used</em>
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends
+        config-file="injection.xml">org.intellij.intelliLang</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
@@ -34,6 +36,10 @@
         <lang.parserDefinition
                 language="api_blue_print"
                 implementationClass="com.example.api_blue_print.ABPParserDefinition"/>
-
+    </extensions>
+    <extensions defaultExtensionNs="org.intellij.intelliLang">
+        <languageSupport
+                implementation="com.example.api_blue_print.inject.ABPInjectionSupport"/>
+        <injectionConfig config="resources/META-INF/injection.xml"/>
     </extensions>
 </idea-plugin>

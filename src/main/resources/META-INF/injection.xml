@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="LanguageInjectionConfiguration">
+    <injection language="JSON" injector-id="api_blue_print">
+        <display-name>JSON</display-name>
+        <place>
+            <![CDATA[
+                psiElement()
+                   .afterLeaf("{")
+                   .withSuperParent(2, ABPList::class.java)
+            ]]>
+        </place>
+    </injection>
+</component>

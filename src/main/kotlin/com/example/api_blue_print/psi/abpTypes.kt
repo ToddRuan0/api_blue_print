@@ -10,7 +10,7 @@ interface ABPTokenSets {
         val level4T = TokenSet.create(ABPTypes.LEVEL_4_T)
         val level5T = TokenSet.create(ABPTypes.LEVEL_5_T)
         val listBegin = TokenSet.create(ABPTypes.LIST_BEGIN)
-        val string = TokenSet.create(ABPTypes.STRING)
+        val line = TokenSet.create(ABPTypes.LINE)
 //        val COMMENTS = TokenSet.create(ABPTypes.COMMENT)
     }
 }
